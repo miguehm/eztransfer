@@ -6,7 +6,7 @@ To try the early version of this application, you should do the following:
 
 ## Dependences
 
-Create a python enviroment:
+Create a python environment:
 
 ```bash
 python3 -m venv eztransfer
@@ -33,6 +33,8 @@ python3 test_cli.py upload <filepath1> <filepath2> ...
 ```
 
 Automatically prints the sqlite database table of your recent files uploaded.
+
+> More details about the output in [docs](https://github.com/miguehm/eztransfer/blob/main/docs/requerimientos.md)  
 
 ## TODO
 
