@@ -46,6 +46,12 @@ Automatically prints the sqlite database table of your recent files uploaded.
 - [ ] *Help* command
 - [ ] Turn to python whl package
 - [ ] Upload to PyPI repository
+- [ ] Add more example usages
+- [ ] Add some gif command-line example usages 
+
+## MAYBE
+
+- [ ] Desing MVC
 
 # eztransfer - transfer.sh links managing
 
