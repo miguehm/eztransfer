@@ -4,6 +4,12 @@ This is just a draft of what eztransfer aims to be; the majority of functions ar
 
 To try the early version of this application, you should do the following:
 
+Clone this repo and go to the folder
+
+```bash
+git clone https://github.com/miguehm/eztransfer.git && cd eztransfer
+```
+
 ## Dependences
 
 Create a python environment:
@@ -50,6 +56,7 @@ Automatically prints the sqlite database table of your recent files uploaded.
 - [ ] Upload to PyPI repository
 - [ ] Add more example usages
 - [ ] Add some gif command-line example usages 
+- [ ] Turn to CLI application inside /bin/ folder
 
 ## MAYBE
 
