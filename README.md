@@ -64,7 +64,7 @@ Automatically prints the sqlite database table of your recent files uploaded.
 
 # eztransfer - transfer.sh links managing
 
-eztransfer is a python that allows you to create and manage links to files uploaded to [transfer.sh](https://trasfer.sh) cloud storage service. With this application, you can easily upload files to the cloud of transfer.sh with 14-day expiration time for free and conveniently store and manage the generated links.
+eztransfer is a python that allows you to create and manage links to files uploaded to [transfer.sh](https://transfer.sh/) cloud storage service. With this application, you can easily upload files to the cloud of transfer.sh with 14-day expiration time for free and conveniently store and manage the generated links.
 
 # Key Features
 
@@ -140,6 +140,6 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 
 # Acknowledgments
 
-We'd like to thank [trasfer.sh](https://trasfer.sh) for providing a convenient and free cloud storage service.
+We'd like to thank [trasfer.sh](https://transfer.sh) for providing a convenient and free cloud storage service.
 
 We hope you enjoy using **eztransfer** to efficiently manage your cloud file links!
