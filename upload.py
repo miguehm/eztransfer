@@ -9,10 +9,10 @@ def get_date(upload_date):
     date = datetime.strptime(upload_date, '%a, %d %b %Y %H:%M:%S %Z')
     return date
 
-def upload_file(file_path):
+def upload_file(file_path: str, headers: dict = {}):
     try:
         with open(file_path, 'rb') as f:
-            response = requests.post('https://transfer.sh/', files={'file': f})
+            response = requests.post('https://transfer.sh/', headers=headers, files={'file': f})
             # print(response.status_code)
         upload_date = get_date(response.headers['Date'])
         link = get_tokens(response.headers['X-Url-Delete'])
@@ -34,4 +34,4 @@ def upload_file(file_path):
         return None
 
 if __name__ == '__main__':
-    print(upload_file('test.txt'))
+    print(upload_file('test.txt', {'Max-Downloads': '1'}))
