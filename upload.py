@@ -1,4 +1,5 @@
 import requests
+import typer
 from datetime import datetime
 
 def get_tokens(link):
@@ -18,7 +19,8 @@ def upload_file(file_path: str, headers: dict = {}):
         link = get_tokens(response.headers['X-Url-Delete'])
 
         d = dict()
-        d['upload_token'] = link[0]
+        d['filename'] = file_path.split('/')[-1]
+        d['download_token'] = link[0]
         d['delete_token'] = link[1]
         d['day'] = upload_date.strftime("%d")
         d['month'] = upload_date.strftime("%m")
@@ -31,7 +33,7 @@ def upload_file(file_path: str, headers: dict = {}):
         
     except FileNotFoundError as e:
         print(f"File not found: \"{file_path}\"")
-        return None
+        raise typer.Exit(code=1)
 
 if __name__ == '__main__':
     print(upload_file('test.txt', {'Max-Downloads': '1'}))

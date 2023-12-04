@@ -1,5 +1,6 @@
 import typer
 from upload import upload_file
+from write import write_db
 
 def main(path_file: str,
          max_downloads: int = typer.Option(
@@ -7,24 +8,23 @@ def main(path_file: str,
             help="Max downloads allowed for the file",
             rich_help_panel="Upload Options"),
          max_days: int = typer.Option(
-            None,
+            14,
             help="Max days for dowload (transfer.sh allow: 14)",
             rich_help_panel="Upload Options")
          ):
     
-    return path_file
-
     headers = {}
     
     if max_downloads:
         headers['Max-Downloads'] = str(max_downloads)
-    if max_days and max_days <= 14:
+    if max_days <= 14:
         headers['Max-Days'] = str(max_days)
     else:
         print("Max days allowed: 14")
         raise typer.Exit(code=1)
     
-    print(upload_file(path_file, headers))
+    data = upload_file(path_file, headers)
+    write_db(data)
 
 if __name__ == "__main__":
     typer.run(main)
