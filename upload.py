@@ -36,4 +36,4 @@ def upload_file(file_path: str, headers: dict = {}):
         raise typer.Exit(code=1)
 
 if __name__ == '__main__':
-    print(upload_file('test.txt', {'Max-Downloads': '1'}))
+    print(upload_file('./README.md', {'Max-Downloads': '1'}))

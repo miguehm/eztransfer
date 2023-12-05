@@ -16,8 +16,8 @@ def read_by_file():
     print("-------------------------")
     if resultados is not None:
         for registro in resultados:
-            print(f"Filename: {registro[1]}")
-            print(f"Download link: https://transfer.sh/{registro[0]}/{registro[1]}")
+            print(f"Filename: {registro[0]}")
+            print(f"Download link: https://transfer.sh/{registro[1]}/{registro[0]}")
             print(f"Delete token: {registro[2]}")
             print(f"Upload date: {registro[3]}/{registro[4]}/{registro[5]} - {registro[6]}:{registro[7]}:{registro[8]}")
             print("-------------------------")
