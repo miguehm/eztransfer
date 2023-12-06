@@ -5,7 +5,7 @@ from leer_db import read_by_file, show_files
 
 app = typer.Typer()
 
-@app.command()
+@app.command(help="Upload a local file")
 def upload(path_file: str,
          max_downloads: int = typer.Option(
             None,
@@ -30,11 +30,11 @@ def upload(path_file: str,
     data = upload_file(path_file, headers)
     write_db(data)
 
-@app.command()
+@app.command(help="Show all uploaded files")
 def show():
     show_files()
 
-@app.command()
+@app.command(help="Search a file by name")
 def search():
     read_by_file()
 
