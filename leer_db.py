@@ -1,5 +1,8 @@
 import sqlite3
 
+# TODO: add search by date
+# TODO: show time correctly using actual timezone
+
 def read_by_file():
     
     filename = input("Ingrese el nombre del archivo: ")
@@ -28,6 +31,7 @@ def read_by_file():
     conexion.close()
 
 def show_files():
+    # TODO where to put the db file?
     conexion = sqlite3.connect('test.db')
 
     cursor = conexion.cursor()

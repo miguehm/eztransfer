@@ -31,6 +31,7 @@ def upload_file(file_path: str, headers: dict = {}):
         d['max-days'] = headers['Max-Days']
         
         print("Upload successful")
+        print(response.text)
         return d
         
     except FileNotFoundError as e:
@@ -38,4 +39,4 @@ def upload_file(file_path: str, headers: dict = {}):
         raise typer.Exit(code=1)
 
 if __name__ == '__main__':
-    print(upload_file('./README.md', {'Max-Downloads': '1'}))
+    print(upload_file('./README.md', {'Max-Downloads': '1', 'Max-Days': '14'}))
