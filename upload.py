@@ -28,7 +28,9 @@ def upload_file(file_path: str, headers: dict = {}):
         d['hour'] = upload_date.strftime("%H")
         d['minute'] = upload_date.strftime("%M")
         d['second'] = upload_date.strftime("%S")
+        d['max-days'] = headers['Max-Days']
         
+        print("Upload successful")
         return d
         
     except FileNotFoundError as e:
