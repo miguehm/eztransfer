@@ -1,8 +1,12 @@
 import typer
 from upload import upload_file
 from write import write_db
+from leer_db import read_by_file, show_files
 
-def main(path_file: str,
+app = typer.Typer()
+
+@app.command()
+def upload(path_file: str,
          max_downloads: int = typer.Option(
             None,
             help="Max downloads allowed for the file",
@@ -26,5 +30,14 @@ def main(path_file: str,
     data = upload_file(path_file, headers)
     write_db(data)
 
+@app.command()
+def show():
+    show_files()
+
+@app.command()
+def search():
+    read_by_file()
+
 if __name__ == "__main__":
-    typer.run(main)
+    # typer.run(main)
+    app()
