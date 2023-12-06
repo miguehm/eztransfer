@@ -15,7 +15,7 @@ git clone https://github.com/miguehm/eztransfer.git && cd eztransfer
 Create a python environment:
 
 ```bash
-python3 -m venv eztransfer
+python3 -m venv venv
 ```
 
 Activate it
@@ -35,28 +35,54 @@ pip install -r requirements.txt
 To upload files
 
 ```bash
-python3 test_cli.py upload <filepath1> <filepath2> ...
+python3 main.py upload <filepath> ...
 ```
 
-Automatically prints the sqlite database table of your recent files uploaded.
+## Show
 
-> More details about the output in [docs](https://github.com/miguehm/eztransfer/blob/main/docs/requerimientos.md)  
+Show all your uploaded files
+
+```bash
+python3 main.py show
+```
+
+## Search
+
+Search by filename
+
+```bash
+python3 main.py search <filename>
+```
+
+## Help
+
+General help
+
+```bash
+python3 main.py --help
+```
+
+Upload command help
+
+```bash
+python3 main.py upload --help
+```
 
 ## TODO
 
 - [x] Upload files method
 - [x] Create the data base design and write on it
-- [x] Upload multiple files as a cli tool using `click` lib
-- [x] Encrypt functionality
-- [ ] Design the commands and subcommands hierarchy
-- [ ] *List* command
+- [ ] Upload multiple files at same time
+- [ ] Encrypt functionality
+- [x] Design the commands and subcommands hierarchy
+- [x] *upload* command
+- [x] *show* command
+- [x] *search* command
 - [ ] *Delete* command
-- [ ] *Help* command
+- [x] *Help* command
 - [ ] Turn to python whl package
 - [ ] Upload to PyPI repository
-- [ ] Add more example usages
-- [ ] Add some gif command-line example usages 
-- [ ] Turn to CLI application inside /bin/ folder
+- [ ] Create docs web page
 
 ## MAYBE
 
